@@ -16,21 +16,30 @@
 		<div class="tabBox">
 			<span class="reg_per" id="regper">个人用户</span>
 			<div class="login">已有账号，立即
-				<a href="https://passport.sfbest.com?returnUrl=http://www.sfbest.com/">登录</a>
+				<a href="login.html">登录</a>
 			</div>
 		</div>
 		
 		<div class="reg_main">
 			<ul class="reg_ul">
 				<form action="" method="post">
-					<li><label><font>*</font><span>账户名：</span></label><input type="text" /></li>
-					<li><label><font>*</font><span>登录密码：</span></label><input type="text" /></li>
-					<li class="safe_Layer">安全程度：</font><em class="default">弱</em><em class="default">中</em><em class="default">强</em></li>
-					<li><label><font>*</font><span>确认密码：</span></label><input type="text" /></li>
-					<li><label><font>*</font><span>验证码：</span></label><input type="text" /></li>
-					<input type="submit" value="立即注册"/>
+					<li><label><font>* </font><span>账户名：</span></label><input type="text" /></li>
+					<li><label><font>* </font><span>登录密码：</span></label><input type="text" /></li>
+					<li class="safe_Layer"><span>安全程度：</span></font><em class="default">弱</em><em class="default">中</em><em class="default">强</em></li>
+					<li><label><font>* </font><span>确认密码：</span></label><input type="text" /></li>
+					<li class="yz-code"><label><font>* </font><span>验证码：</span></label><input type="text" />
+					<img id="code_img1" src=""   class="yz-codeimg">
+						<span>看不清<a href="">换一换</a></span>
+					</li>
+					<li class="agree"><input type="checkbox" id="agreeid"  />
+						<a href="https://passport.sfbest.com/xy.html">
+							我已阅读并同意<font>《顺丰优选用户注册协议》</font>
+						</a>
+					</li>
+					<input type="submit" value="立即注册" id="register-now"/>
 				</form>
 			</ul>
+			<div class="learn-more"><a href="">了解更多>></a></div>
 		</div>
 		
 		

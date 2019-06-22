@@ -19,6 +19,9 @@ gulp.task("copyJS",function(){
 gulp.task("copyImg",function(){
 	gulp.src("img/**").pipe(gulp.dest('dist/img'))
 })
+gulp.task("copyIcon",function(){
+	gulp.src("icon/**").pipe(gulp.dest('dist/icon'))
+})
 //转换scss并复制到dist/css
 gulp.task("sass",function(){
 	gulp.src("sass/*.scss")
@@ -29,7 +32,7 @@ gulp.task("sass",function(){
 })
 
 
-gulp.task('build',['copyHtml','copyImg','copyJS','sass'],function(){
+gulp.task('build',['copyHtml','copyImg','copyJS','sass','copyIcon'],function(){
 	console.log("成功")
 })
 
@@ -46,7 +49,8 @@ gulp.task('watchAll',function(){
 	gulp.watch('*.html',['copyHtml']);
 	gulp.watch('sass/*.scss',['sass']);
 	gulp.watch('img/**',['copyImg']);
-	gulp.watch('js/*.js',['copyJS'])
+	gulp.watch('js/*.js',['copyJS']);
+	gulp.watch('icon/**',['copyIcon'])
 })
 gulp.task('default',['server','watchAll'])
 
