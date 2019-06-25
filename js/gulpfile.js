@@ -10,17 +10,17 @@ const babel = require("gulp-babel");
 
 //复制文件到dist文件夹
 gulp.task("copyHtml",function(){
-	gulp.src("*.html").pipe(gulp.dest('dist'))
+	gulp.src("*.html").pipe(gulp.dest('dist')).pipe(connect.reload())
 })
 gulp.task("copyJS",function(){
-	gulp.src("*.js").pipe(gulp.dest('dist/js'))
+	gulp.src("*.js").pipe(gulp.dest('dist/js')).pipe(connect.reload())
 })
 //k拷贝所有文件
 gulp.task("copyImg",function(){
-	gulp.src("img/**").pipe(gulp.dest('dist/img'))
+	gulp.src("img/**").pipe(gulp.dest('dist/img')).pipe(connect.reload())
 })
 gulp.task("copyIcon",function(){
-	gulp.src("icon/**").pipe(gulp.dest('dist/icon'))
+	gulp.src("icon/**").pipe(gulp.dest('dist/icon')).pipe(connect.reload())
 })
 //转换scss并复制到dist/css
 gulp.task("sass",function(){
@@ -52,7 +52,7 @@ gulp.task('watchAll',function(){
 	gulp.watch('js/*.js',['copyJS']);
 	gulp.watch('icon/**',['copyIcon'])
 })
-gulp.task('default',['server','watchAll'])
+gulp.task('default',['server','watchAll','sass'])
 
 
 

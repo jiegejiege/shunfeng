@@ -6,6 +6,8 @@
 		<title>顺丰优选 SF-best</title>
 		<link rel="stylesheet" type="text/css" href="css/header-footer.css" />
 		<link rel="stylesheet" type="text/css" href="css/register.css" />
+		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/register.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body>
@@ -22,22 +24,22 @@
 		
 		<div class="reg_main">
 			<ul class="reg_ul">
-				<form action="" method="post">
-					<li><label><font>* </font><span>账户名：</span></label><input type="text" /></li>
-					<li><label><font>* </font><span>登录密码：</span></label><input type="text" /></li>
+					<li><label><font>* </font><span>账户名：</span></label><input type="text" id="tel"/><b>用户名已存在</b></li>
+					<li><label><font>* </font><span>登录密码：</span></label><input type="text" id="pas"/><b>6-20位字母组合，可使用字母，数字，下划线</b></li>
 					<li class="safe_Layer"><span>安全程度：</span></font><em class="default">弱</em><em class="default">中</em><em class="default">强</em></li>
-					<li><label><font>* </font><span>确认密码：</span></label><input type="text" /></li>
-					<li class="yz-code"><label><font>* </font><span>验证码：</span></label><input type="text" />
-					<img id="code_img1" src=""   class="yz-codeimg">
-						<span>看不清<a href="">换一换</a></span>
+					<li><label><font>* </font><span>确认密码：</span></label><input type="text" id="pas2"/><b>与密码不符，请再次输入密码</b></li>
+					<li class="yz-code"><label><font>* </font><span>验证码：</span></label>
+						<input type="text" id="yzcode" />
+						<i class="yz-codeimg">1234</i>
+						<span>看不清<a  class="huanyihuan">换一换</a></span>
+						<b>验证码输入错误</b>
 					</li>
-					<li class="agree"><input type="checkbox" id="agreeid"  />
+					<li class="agree"><input type="checkbox" id="agreeid" checked="checked" />
 						<a href="https://passport.sfbest.com/xy.html">
 							我已阅读并同意<font>《顺丰优选用户注册协议》</font>
 						</a>
 					</li>
-					<input type="submit" value="立即注册" id="register-now"/>
-				</form>
+					<input type="text" value="立即注册" id="register-now"/>
 			</ul>
 			<div class="learn-more"><a href="">了解更多>></a></div>
 		</div>

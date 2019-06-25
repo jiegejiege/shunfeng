@@ -7,6 +7,8 @@
 		<link rel="stylesheet" type="text/css" href="css/header-footer.css" />
 		<link rel="stylesheet" type="text/css" href="css/login.css" />
 		<link rel="stylesheet" type="text/css" href="icon/login-icon/iconfont.css"/>
+		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body>
@@ -28,11 +30,11 @@
 					<div class="logincon">
 						<ul class="login-mess">
 							<form >
-								<li><span class="iconfont icon-wo"></span><input type="text" placeholder="请输入手机号/邮箱/用户名"/></li>
-								<li><span class="iconfont icon-mima"></span><input type="password" placeholder="请输入密码"/></li>
-								<li><span class="iconfont icon-yanzhengma"></span><input type="text" placeholder="请输入验证码"/>
-									<div class="yz-code-login" style="width: 109px;height: 38px;background-color: gray;"></div></li>
-								<input type="submit" value="登录" id="login"/>
+								<li><span class="iconfont icon-wo"></span><input type="text" id="usr" placeholder="请输入手机号/邮箱/用户名"/></li>
+								<li><span class="iconfont icon-mima"></span><input type="password" id="pwd" placeholder="请输入密码"/></li>
+								<li><span class="iconfont icon-yanzhengma"></span><input type="text" id="yzcode" placeholder="请输入验证码"/>
+									<div class="yz-code-login" style="width: 109px;height: 38px;background-color: gray;">1234</div></li>
+								<input type="button" value="登录" id="login" />
 							</form>
 						</ul>
 						<div class="yz-login">
