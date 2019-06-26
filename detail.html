@@ -1,9 +1,99 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>详情页</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			#Zoom {
+				width: 800px;
+				height: 525px;
+				position: relative;
+			}
+			
+			#zoom {
+				width: 200px;
+				height: 200px;
+				background-color: #CECECE;
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0.3;
+				display: none;
+				cursor: move;
+			}
+			
+			#midArea {
+				width: 400px;
+				height: 400px;
+				border: 1px solid #CECECE;
+				position: absolute;
+			}
+			
+			#midArea img {
+				width: 400px;
+				height: 400px;
+			}
+			
+			#bigArea {
+				width: 400px;
+				height: 400px;
+				position: absolute;
+				display: none;
+				left: 400px;
+				overflow: hidden;
+				z-index: 10;
+			}
+			
+			#bigArea img {
+				width: 800px;
+				height: 400px;
+				position: absolute;
+			}
+			
+			#smalArea {
+				width: 800px;
+				height: 100px;
+			}
+			
+			#smalArea li {
+				float: left;
+				margin: 20px;
+				list-style: none;
+				width: 100px;
+				height: 100px;
+				margin-top: 405px;
+			}
+			
+			#smalArea li img {
+				width: 100px;
+				height: 100px;
+			}
+			.detail{
+				width: 400px;
+				position: absolute;
+				right: 0;
+				z-index: 1;
+			}
+			.detail p{
+				display: block;
+				margin: 10px;
+				color: #fa8e19;
+			}
+			span{display: inline-block;width: 20px;text-align: center;border: 1px solid #CECECE;}
+			input{line-height: 20px;width: 80px;line-height: 20px;border: none;text-align: center;}
+			input:nth-child(4){background: #669900;color: white;}
+		</style>
+		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/detail.js" type="text/javascript" charset="utf-8"></script>
 	</head>
+
 	<body>
+		
 	</body>
 </html>

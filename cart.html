@@ -3,7 +3,98 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<style type="text/css">
+			body,ul,li{
+				margin: 0;
+				padding: 0;
+			}
+			li{
+				list-style: none;
+			}
+			i{
+				font-style: normal;
+			}
+			span{
+				user-select: none;
+			}
+			input{
+				text-align: center;
+			}
+			img{
+				display: block;
+				border: none;
+				width: 100px;
+				height: 100px;
+				margin: 5px 0;
+			}
+			#item,#ccc{
+				width: 1000px;
+				margin: 0 auto;
+			}
+			#ccc:after{
+				content: ".";
+				display: block;
+				height: 0;
+				clear: both;
+				visibility: hidden;
+			}
+			#item li{
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				border-bottom: 1px solid #000000;
+				padding: 0 10px;
+			}
+			#ccc{
+				margin-top: 100px;
+				border-bottom: 1px solid #000;
+			}
+			#ccc li{
+				float: left;
+				margin-bottom: 20px;
+			}
+			#ccc li:nth-child(1){
+				margin-left: 10px;
+			}
+			#ccc li:nth-child(2){
+				margin-left: 200px;
+			}
+			#ccc li:nth-child(3){
+				margin-left: 140px;
+			}
+			#ccc li:nth-child(4){
+				margin-left: 180px;
+			}
+			#ccc li:nth-child(5){
+				margin-left: 205px;
+			}
+			#ccc li:nth-child(6){
+				margin-left:70px;
+			}
+			#monkey{
+				margin: 0 auto;
+				margin-top: 10px;
+					width: 778px;
+					text-align: right;
+			}
+			.num{
+				width: 50px;
+			}
+		</style>
 	</head>
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/cart.js" type="text/javascript" charset="utf-8"></script>
 	<body>
+
+		<ul id = "ccc">
+			<li><input id = "btn" type="checkbox"checked="checked"/></li>
+			<li>商品</li>
+			<li>价格</li>
+			<li>数量</li>
+			<li>总计</li>
+			<li>操作</li>
+		</ul>
+		<ul id="item"></ul>
+		<div id= "monkey"><span>0</span></div>
 	</body>
 </html>

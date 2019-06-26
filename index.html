@@ -9,15 +9,17 @@
 		<link rel="stylesheet" type="text/css" href="icon/login-icon/iconfont.css" />
 		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/lunbo.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body>
 		<div class="side-panel">
 			<div class="side-panel-c iconfont icon-kefu"></div>
 			<div class="side-panel-c iconfont icon-VIP"></div>
-			<div class="side-panel-c iconfont icon-gouwuche">
+			<a class="side-panel-c iconfont icon-gouwuche" style="display: block;" href="cart.html">
 				<span class="cart-num"></span>
-			</div>
+			</a>
 			<div class="side-panel-c iconfont icon-zuji">
 				<a href="">浏览记录</a>
 			</div>
@@ -287,12 +289,14 @@
 		<div id="header">
 			<div class="header_inner">
 				<div class="logo">
-					<a href=""><img src="img/indexLogo2019.png" /></a>
+					<a href="index.html"><img src="img/indexLogo2019.png" /></a>
 				</div>
 				<div class="search">
-					<form action="" method="post">
-						<input type="text" name="" id="searchForm" placeholder="冰淇淋" />
+					<form>
+						<input type="text" name="" id="searchForm" placeholder="冰淇淋"  />
 						<input type="submit" value="搜索" class="submit" />
+						<ul id="search-ul">
+						</ul>
 					</form>
 					<div class="searchhot">
 						<a href="">松茸</a>
@@ -318,20 +322,13 @@
 					</div>
 					<div class="dd" id="allSort">
 						<div class="booksort">
-							<div class="item">
-								<span class="i-master">
-									<h3 class="dev"><a href="">肉类海鲜</a></h3>
-									<ul class="subCat">
-										<li><a href="">牛肉</a></li>
-										<li><a href="">牛肉</a></li>
-										<li><a href="">牛肉</a></li>
-										<li><a href="">牛肉</a></li>
-									</ul>
-								</span>
-							</div>
+							<ul class="booksort-l1">
+								<li>1111</li>
+							</ul>
 						</div>
 					</div>
 				</div>
+				<div class="booksort2"></div>
 				<div class="menu1">
 					<ul>
 						<li>
@@ -359,12 +356,18 @@
 		<div class="slide_show" id="slide_show">
 			<div class="indexW">
 				<div class="index_slide">
-					<ol>
+					<ol class="lunbo">
 						<li><img src="img/indexslide.png" /></li>
-						<li><img src="img/indexslide.png" /></li>
-						<li><img src="img/indexslide.png" /></li>
-						<li><img src="img/indexslide.png" /></li>
+						<li><img src="img/indexslide1.jpg" /></li>
+						<li><img src="img/indexslide2.jpg" /></li>
+						<li><img src="img/indexslide3.jpg" /></li>
 					</ol>
+					<ul id="footid">
+						<li>1</li>
+						<li>2</li>
+						<li>3</li>
+						
+					</ul>
 				</div>
 				<div class="rSide">
 					<a href=""><img src="img/rSide1.jpg" /></a>
@@ -472,10 +475,10 @@
 						<dd id="nowHour2">1</dd>
 						<dd class="no">时</dd>
 						<dd id="nowMin1">1</dd>
-						<dd id="nowMin1">1</dd>
+						<dd id="nowMin2">1</dd>
 						<dd class="no">分</dd>
 						<dd id="nowSencond1">1</dd>
-						<dd id="nowSencond1">1</dd>
+						<dd id="nowSencond2">1</dd>
 						<dd class="no">秒</dd>
 						<p class="no">结束</p>
 						<p class="xiaqi">下期预告</p>
