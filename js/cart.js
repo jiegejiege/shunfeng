@@ -103,6 +103,31 @@ $(function() {
 			$(this).parent().remove();
 			total();
 		})
+		//未实现通过修改输入框数值来修改数量；
+//		$("#item li").find(".num").focus(function(){
+//			var id = $(this).parent().attr('data-id'); //获取购物车内的商品id
+//			var gid = $(this).parent().attr('gid'); //获取商品本身的id
+//			var num_focus=$(this).val();
+//			$(this).blur(function(){
+//			var num_leave=$(this).val();
+//			num= num_leave-num_focus;
+//			if(num0){
+//				$.get("http://47.104.244.134:8080/cartupdate.do", {
+//				id: id,
+//				gid: gid,
+//				num: num,
+//				token: uid
+//			}, function(data) {
+//				console.log(data)
+//			})
+//			}
+//			if(num=0){
+//				
+//			}else{
+//				
+//			}
+//		})
+//		})
 
 	})
 })

@@ -1,7 +1,4 @@
 $(function() {
-	
-	
-	
 	//获取本地localstorage 写入欢迎界面
 	var wel=localStorage.getItem("username")
 	$(".login").find("a").eq(0).html(wel)
@@ -82,21 +79,31 @@ $(function() {
 		})
 	})
 //	//搜索框
-//				$("#searchForm").on("input",function(){
-//					$.ajax({
-//						type:"get",
-//						url:"http://www.sfbest.com/productlist/keysearch?callback=?&q="+$(this).val()",
-//						async:true,
-//						success:function(data){
-//					var str=data;
-//					let arr = str.split("|");
-//					var str1="";
-//					for (var i=1;i<arr.length;i+=2) {
-//						str1+=`<li><a href="https://www.baidu.com/s?wd=${data[i]}">${arr[i]}</a></li>`
-//					}
-//					$("#search-ul").html(str1)	
-//						}
-//					})});
+				$("#searchForm").on("input",function(){
+					console.log($("#searchForm").val())
+					var a=$("#searchForm").val();
+					$.ajax({
+						type:"get",
+						//url:"https://category.vip.com/ajax/getSuggestHotKeywords.php?callback=?&count=10&_=1561085835004",
+						url:"http://www.sfbest.com/productlist/keysearch?callback=?&q="+a+"&limit=100&timestamp=1561633446757",
+						async:true,
+						dataType:"jsonp",
+						success:function(data){
+							var str=data;
+					let arr = str.split("|");
+					var str1="";
+					for (var i=1;i<arr.length;i+=2) {
+						str1+=`<li><a href="http://www.sfbest.com/productlist/search?keyword=${arr[i]}">${arr[i]}</a></li>`
+					}
+					//console.log(str1)
+					$("#search-ul").html(str1)	
+						}
+					})}).blur(function(){
+						$("#search-ul").css({"display":"none"})
+					})
+
+
+
 
 	//获取菜单
 	$.get("http://47.104.244.134:8080/goodstypelist.do", {

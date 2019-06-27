@@ -99,7 +99,7 @@ $(function() {
 			var gid = $(this).attr("data-id")
 			var n=$(".num").val();
 			for (var i=0;i<n;i++) {
-							$.get("http://47.104.244.134:8080/cartsave.do", {
+					$.get("http://47.104.244.134:8080/cartsave.do", {
 					gid: gid,
 					token: uid
 				},
