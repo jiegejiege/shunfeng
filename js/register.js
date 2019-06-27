@@ -81,7 +81,6 @@ $("#tel").blur(function(){
         }
 		
 		$('#register-now').click(function(){
-			console.log("zhuce")
 			var tel=$("#tel").val();
 			var pas=$("#pas").val();
 			console.log($("#tel").val(),$("#pas").val())
@@ -92,7 +91,8 @@ $("#tel").blur(function(){
 				sex:"1"
 			},function(data){
 				if(data.code == 0){
-                            window.location.href="index.html"
+					localStorage.setItem("username",tel);
+                    window.location.href="index.html";
                 }
 			})
 		})

@@ -1,5 +1,12 @@
 $(function() {
 	var id = location.search.split("=")[1];
+	console.log(id)
+		 $(".categories").mouseover(function(){
+	 	$("#allSort").css({"display":"block"})
+	 })
+	 $(".booksort2").mouseleave(function(){
+	 	$("#allSort").css({"display":"none"})
+	 })
 	$.get("http://47.104.244.134:8080/goodsbyid.do", {
 		id: id
 	}, function(data) {
@@ -20,15 +27,15 @@ $(function() {
 			<div class="detail">
 				<p>${data.name}</p>
 				<p>评级:${data.star}颗星</p>
-			<p>${data.price}</p>
+			<p>价格：${data.price}</p>
 			<p>
-				<span>-</span><input type="text" value="1" class="num"><span>+</span>
-				<input type="button" class="btn" value="加入购物车" data-id=${data.id}>
+				<span id="reduce">-</span><input type="text" value="1" class="num" id="num"><span id="plus">+</span>
+				<input type="button" class="btn" value="加入购物车" data-id=${data.id} id="btn">
 			</p>
 			</div>
 		</div>
 		`
-		$("body").html(str);
+		$("#detail1").html(str);
 		$("#midArea").mousemove(function(e) {
 			$("#bigArea img").attr({
 				src: $(this).attr("src")
@@ -39,10 +46,10 @@ $(function() {
 			var b = $("#zoom").innerHeight();
 			var x = e.pageX - a / 2;
 			var y = e.pageY - b / 2;
-			var maxWidth = $(this).innerWidth() - $("#zoom").innerWidth();
-			var maxHeigth = $(this).innerHeight() - $("#zoom").innerHeight();
-			x = x >= maxWidth ? maxWidth : x < 0 ? 0 : x;
-			y = y <= 0 ? 0 : y >= maxHeigth ? maxHeigth : y;
+			var maxWidth = $(this).innerWidth() - $("#zoom").innerWidth()+75;
+			var maxHeigth = $(this).innerHeight() - $("#zoom").innerHeight()+252;
+			x = x >= maxWidth ? maxWidth : x <= 75 ? 75 : x;
+			y = y <= 252 ? 252 : y >= maxHeigth ? maxHeigth : y;
 			$("#zoom").css({
 				"display": "block"
 			}).offset({
@@ -53,8 +60,8 @@ $(function() {
 			var d = $(this).height();
 			var e = $("#bigArea img").width();
 			var f = $("#bigArea img").height();
-			var X = x / c * e;
-			var Y = y / d * f;
+			var X = (x-75) / c * e;
+			var Y = (y-252) / d * f;
 			//console.log(x, y, X, Y, c, e)
 			$("#bigArea img").css({
 				top: -Y,
@@ -70,41 +77,38 @@ $(function() {
 			});
 		})
 		//console.log($("span").eq(0))
-		$("span").eq(0).click(function() {
-			var a = $(".num").val();
+		//数量减少按钮
+		$("#reduce").click(function() {
+			var a = $("#num").val();
 			a--;
-			$(".num").val(a)
+			$("#num").val(a)
 			if(a <= 1) {
-				$(".num").val("1");
+				$("#num").val("1");
 			}
 
 		})
-		$("span").eq(1).click(function() {
-			var a = $(".num").val();
+		//数量增加按钮
+		$("#plus").click(function() {
+			var a = $("#num").val();
 			a++;
-			console.log(a)
-			$(".num").val(a)
+			$("#num").val(a)
 		})
-		$(".btn").click(function() {
+		//加入购物车按钮
+		$("#btn").click(function() {
 			var uid = localStorage.getItem("uid")
 			var gid = $(this).attr("data-id")
-			$.get("http://47.104.244.134:8080/cartsave.do", {
+			var n=$(".num").val();
+			for (var i=0;i<n;i++) {
+							$.get("http://47.104.244.134:8080/cartsave.do", {
 					gid: gid,
 					token: uid
 				},
 				function(data) {
-					alert("添加成功");
+					console.log(data)
 				});
+			}
+			alert("共添加"+n+"件商品到购物车")
 		})
 
 	})
-
-	//	$("#smalArea img").on('mouseover', function() {
-	//		alert("aa")
-	//		var src1 = $(this).attr("src")
-	//		$("#midArea img").attr({
-	//			src: src1
-	//		});
-	//	})
-
 })

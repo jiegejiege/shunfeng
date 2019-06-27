@@ -2,6 +2,12 @@ $(function(){
 	console.log(window.location.href)
 	 var id = location.search.split("=")[1];
 	 console.log(id)
+	 $(".categories").mouseover(function(){
+	 	$("#allSort").css({"display":"block"})
+	 })
+	 $(".booksort2").mouseleave(function(){
+	 	$("#allSort").css({"display":"none"})
+	 })
 	$.get("http://47.104.244.134:8080/goodsbytid.do",{tid:id,page:1,limit:13},function(data){
 			
 			var data=data.data;
@@ -15,7 +21,9 @@ $(function(){
 				<input type="button" data-id="${data[i].id}" value="添加购物车" /></li>`;
 			}
 			$("#list-l").html(str);
+			//添加购物车的点击事件
 			$("#list-l").find("li input").click(function() {
+				$(this).css({})
 			var uid = localStorage.getItem("uid")
 			var gid = $(this).attr("data-id")
 			//console.log(gid)
@@ -27,15 +35,5 @@ $(function(){
 					//alert("添加成功");
 				});
 		})
-//			oUl.innerHTML=str;
-//			var cart=new Cart();
-//			var aInput=document.querySelectorAll("input");
-//			for (let i=0;i<aInput.length;i++) {
-//				aInput[i].onclick=function(){
-//					var id=aInput[i].getAttribute("data-id");
-//					console.log(id)
-//					cart.addData(id,1);
-//				}
-//			}
 	})
 })

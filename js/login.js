@@ -12,8 +12,10 @@ $(function(){
 				if(parseInt($(".yz-code-login").html())!=$("#yzcode").val()){
 					alert("验证码输入错误")
 				}else{
+					console.log(data)
 					window.location.href="index.html?uid="+data.data.token;
 					localStorage.setItem("uid",data.data.token);
+					localStorage.setItem("username",usr);
 				}
 			}
 		})

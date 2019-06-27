@@ -1,4 +1,10 @@
 $(function() {
+	
+	
+	
+	//获取本地localstorage 写入欢迎界面
+	var wel=localStorage.getItem("username")
+	$(".login").find("a").eq(0).html(wel)
 	//顶部小广告，点击X时，消失
 	$(".topromo").find("span").click(function() {
 		$(this).parent().slideUp();
@@ -111,7 +117,7 @@ $(function() {
 				l: 2
 			}, function(data) {
 				var str = "";
-				console.log(data)
+				//console.log(data)
 				for(var i = 0; i < data.length; i++) {
 					if(data[i].parentid == li_id) {
 						str += `

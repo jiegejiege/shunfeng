@@ -5,15 +5,12 @@
 		<meta charset="UTF-8">
 		<title>详情页</title>
 		<style type="text/css">
-			* {
-				margin: 0;
-				padding: 0;
-			}
 			
 			#Zoom {
 				width: 800px;
 				height: 525px;
 				position: relative;
+				margin-left: 75px;
 			}
 			
 			#zoom {
@@ -46,13 +43,14 @@
 				position: absolute;
 				display: none;
 				left: 400px;
+				top: 0;
 				overflow: hidden;
 				z-index: 10;
 			}
 			
 			#bigArea img {
 				width: 800px;
-				height: 400px;
+				height: 800px;
 				position: absolute;
 			}
 			
@@ -85,15 +83,474 @@
 				margin: 10px;
 				color: #fa8e19;
 			}
-			span{display: inline-block;width: 20px;text-align: center;border: 1px solid #CECECE;}
-			input{line-height: 20px;width: 80px;line-height: 20px;border: none;text-align: center;}
-			input:nth-child(4){background: #669900;color: white;}
+			#Zoom span{display: inline-block;width: 20px;text-align: center;border: 1px solid #CECECE;}
+			#Zoom input{line-height: 20px;width: 80px;line-height: 20px;border: none;text-align: center;}
+			#Zoom input:nth-child(4){background: #669900;color: white;}
 		</style>
 		<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/detail.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="css/header-footer-index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<script src="js/common.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="icon/login-icon/iconfont.css"/>
 	</head>
 
 	<body>
-		
+				<div class="side-panel">
+			<div class="side-panel-c iconfont icon-kefu"></div>
+			<div class="side-panel-c iconfont icon-VIP"></div>
+			<a class="side-panel-c iconfont icon-gouwuche" style="display: block;" href="cart.html">
+				<span class="cart-num"></span>
+			</a>
+			<div class="side-panel-c iconfont icon-zuji">
+				<a href="">浏览记录</a>
+			</div>
+			<div class="side-panel-c iconfont icon-icon">
+				<a href="">扫码下载</a>
+			</div>
+			<div class="side-panel-c  iconfont icon-zan">
+				<a >为你推荐</a>
+			</div>
+			<div class="side-panel-c iconfont icon-icon_huaban">
+				<a>回到顶部</a>
+			</div>
+			<div class="cart-warp">
+				<div class="cart-shopping">
+					<p><i class="iconfont icon-gouwuche"></i>购物车中暂无商品</p>
+				</div>
+				<div class="cart-shopping1">
+					<ul>
+						<li></li>
+					</ul>
+				</div>
+			</div>
+			<div class="guang">
+				<div class="history">
+					<p>您的浏览记录</p>
+					<ul class="list">
+						<li>1</li>
+						<li>1</li>
+						<li>1</li>
+					</ul>
+					<span class="iconfont icon-shangjiantou"></span>
+				</div>
+			</div>
+
+			<div class="appItem">
+				<img src="img/qrcode.png" alt="" />
+				<a href=""><img src="img/xianyaoquan.png" alt="" /></a>
+			</div>
+		</div>
+		<div class="topromo">
+			<a href=""></a><span  class="iconfont icon-chahao"></span></div>
+		<div class="topMenu">
+			<div class="pW">
+				<ul class="ml">
+					<li>冷链配送 顺丰到家 送至：<span>北京<b class="iconfont icon-sjt"></b></span></li>
+					<li class="address">
+						<div class="city">
+							<div class="cityTop">
+								<p>请选择收货城市：</p>
+								<a class="iconfont icon-chahao"></a>
+							</div>
+							<div class="cityMiddle">
+								<ul>
+									<li>
+										<a href="">北京</a>
+									</li>
+									<li>
+										<a href="">上海</a>
+									</li>
+									<li>
+										<a href="">广州</a>
+									</li>
+									<li>
+										<a href="">深圳</a>
+									</li>
+									<li>
+										<a href="">天津</a>
+									</li>
+									<li>
+										<a href="">苏州</a>
+									</li>
+									<li>
+										<a href="">杭州</a>
+									</li>
+									<li>
+										<a href="">南京</a>
+									</li>
+									<li>
+										<a href="">无锡</a>
+									</li>
+									<li>
+										<a href="">青岛</a>
+									</li>
+									<li>
+										<a href="">武汉</a>
+									</li>
+								</ul>
+							</div>
+							<div class="cityBottom">
+								<p>更多城市：</p>
+								<div class="quyu">
+									<b>华东:</b>
+									<ul class="huadong">
+										<li>
+											<a href="">上海</a>
+										</li>
+										<li>
+											<a href="">上海</a>
+										</li>
+										<li>
+											<a href="">上海</a>
+										</li>
+									</ul>
+								</div>
+								<div class="quyu">
+									<b>华东:</b>
+									<ul class="huadong">
+										<li>
+											<a href="">上海</a>
+										</li>
+										<li>
+											<a href="">上海</a>
+										</li>
+										<li>
+											<a href="">上海</a>
+										</li>
+									</ul>
+								</div>
+								<div class="quyu">
+									<b>华东:</b>
+									<ul class="huadong">
+										<li>
+											<a href="">上海</a>
+										</li>
+										<li>
+											<a href="">上海</a>
+										</li>
+										<li>
+											<a href="">上海</a>
+										</li>
+									</ul>
+								</div>
+								<div class="quyu">
+									<b>华东:</b>
+									<ul class="huadong">
+										<li>
+											<a href="">上海</a>
+										</li>
+										<li>
+											<a href="">上海</a>
+										</li>
+										<li>
+											<a href="">上海</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="mr">
+					<li class="login">
+						嘿，欢迎来顺丰优选！
+						<a href="login.html">请登录</a>|
+						<a href="register.html">免费注册</a>
+						<em>新会员注册送100元优惠券包</em>
+						<i class="iconfont icon-shangjiantou"></i>
+					</li>
+					<li class="myOrder">
+						<a href="">我的订单</a>
+					</li>
+					<li class="menus">
+						<a href="">我的优选<i class="iconfont icon-sjt"></i></a>
+						<ul class="menus-ul">
+							<li>
+								<a href="">我的订单</a>
+							</li>
+							<li>
+								<a href="">我的积分</a>
+							</li>
+							<li>
+								<a href="">我的收藏</a>
+							</li>
+							<li>
+								<a href="">我的优选卡</a>
+							</li>
+							<li>
+								<a href="">我的优惠券</a>
+							</li>
+						</ul>
+					</li>
+					<li class="mobile">
+						<a href=""><span class="iconfont icon-shouji"></span>移动客户端</a>
+						<div class="dd">
+							<img src="img/qrcode.png" />
+							<a href=""><img src="img/ios.png" /></a>
+							<a href=""><img src="img/android.png" /></a>
+							<a href="" class="xianyaoquan"><img src="img/xianyaoquan.png" /></a>
+						</div>
+					</li>
+					<li class="online">
+						<a href="">在线客服</a>
+					</li>
+					<li class="help">
+						<a href="">帮助中心<i class="iconfont icon-sjt"></i></a>
+						<ul class="help-ul">
+							<li>
+								<a href="">购物指南</a>
+							</li>
+							<li>
+								<a href="">配送服务</a>
+							</li>
+							<li>
+								<a href="">支付方式</a>
+							</li>
+							<li>
+								<a href="">售后服务</a>
+							</li>
+							<li>
+								<a href="">客服邮箱</a>
+							</li>
+							<li>
+								<a href="">投诉与建议</a>
+							</li>
+						</ul>
+					</li>
+					<li class="allCat">
+						<a href="">网站导航<span class="iconfont icon-sjt"></span></a>
+						<div class="dd">
+							<dl>
+								<dt>商品分类</dt>
+								<dd>
+									<a href="">肉类海鲜</a>
+									<a href="">肉类海鲜</a>
+									<a href="">肉类海鲜</a>
+									<a href="">肉类海鲜</a>
+									<a href="">肉类海鲜</a>
+									<a href="">肉类海鲜</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>特色频道</dt>
+								<dd>
+									<a href="">跨境直发</a>
+									<a href="">跨境直发</a>
+									<a href="">跨境直发</a>
+								</dd>
+							</dl>
+							<dl>
+								<dt>更多</dt>
+								<dd>
+									<a href="">客户端</a>
+									<a href="">客户端</a>
+									<a href="">客户端</a>
+								</dd>
+							</dl>
+						</div>
+					</li>
+					<li class="share-qq">
+						<a href=""></a>
+					</li>
+					<li class="share-wechat">
+						<a href="" title="关注顺丰优选微博"><span class="iconfont icon-weibo"></span></a>
+						<a href=""><span class="iconfont icon-weixin"></span></a>
+						<div class="guanzhu-wechat">
+							<p>关注顺丰优选微信</p>
+							<img src="img/qrcode2.png" alt="" />
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="header">
+			<div class="header_inner">
+				<div class="logo">
+					<a href="index.html"><img src="img/indexLogo2019.png" /></a>
+				</div>
+				<div class="search">
+					<form>
+						<input type="text" name="" id="searchForm" placeholder="冰淇淋"  />
+						<input type="submit" value="搜索" class="submit" />
+						<ul id="search-ul">
+						</ul>
+					</form>
+					<div class="searchhot">
+						<a href="">松茸</a>
+						<a href="">小龙虾</a>
+						<a href="">小龙虾</a>
+						<a href="">小龙虾</a>
+						<a href="">小龙虾</a>
+					</div>
+				</div>
+				<div class="shoppingcar">
+					<i class="iconfont icon-gouwuche"></i>
+					<a href="cart.html">我的购物车</a>
+					<span id="cartNum">0</span>
+					<div class="cart-list"></div>
+				</div>
+			</div>
+		</div>
+				<div class="mainNav">
+			<div class="navmenu">
+				<div class="categories">
+					<div class="dt">
+						<a href="">精选商品分类</a>
+					</div>
+					<div class="dd" id="allSort" style="display: none;">
+						<div class="booksort">
+							<ul class="booksort-l1">
+								<li>1111</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="booksort2"></div>
+				<div class="menu1">
+					<ul>
+						<li>
+							<a href="" class="btndown">首页</a>
+						</li>
+						<li>
+							<a href="list.html">优选生鲜</a>
+						</li>
+						<li>
+							<a href="list.html">优选厨房</a>
+						</li>
+						<li>
+							<a href="list.html">优选国际</a>
+						</li>
+						<li>
+							<a href="list.html">企业专区</a>
+						</li>
+						<li>
+							<a href="list.html">优选会员</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="detail1"></div>
+		<div id="footer">
+			<div class="footer_zd">
+				<div class="footimg">
+					<img src="img/f1.png" alt="" />
+					<img src="img/f2.png" alt="" />
+					<img src="img/f3.png" alt="" />
+					<img src="img/f4.png" alt="" />
+				</div>
+			</div>
+			<div class="foot">
+				<div class="pageFooter">
+					<div class="left">
+						<i>9533858</i>
+						<em>周一至周日09:00-20:00</em>
+					</div>
+					<div class="middle">
+						<ul>
+							<li class="title">购物指南</li>
+							<li>
+								<a href="">积分制度</a>
+							</li>
+							<li>
+								<a href="">会员介绍</a>
+							</li>
+							<li>
+								<a href="">购物流程</a>
+							</li>
+							<li>
+								<a href="">常见问题</a>
+							</li>
+						</ul>
+						<ul>
+							<li class="title">购物指南</li>
+							<li>
+								<a href="">积分制度</a>
+							</li>
+							<li>
+								<a href="">会员介绍</a>
+							</li>
+							<li>
+								<a href="">购物流程</a>
+							</li>
+							<li>
+								<a href="">常见问题</a>
+							</li>
+						</ul>
+						<ul>
+							<li class="title">购物指南</li>
+							<li>
+								<a href="">积分制度</a>
+							</li>
+							<li>
+								<a href="">会员介绍</a>
+							</li>
+							<li>
+								<a href="">购物流程</a>
+							</li>
+							<li>
+								<a href="">常见问题</a>
+							</li>
+						</ul>
+						<ul>
+							<li class="title">购物指南</li>
+							<li>
+								<a href="">积分制度</a>
+							</li>
+							<li>
+								<a href="">会员介绍</a>
+							</li>
+							<li>
+								<a href="">购物流程</a>
+							</li>
+							<li>
+								<a href="">常见问题</a>
+							</li>
+						</ul>
+						<ul>
+							<li class="title">购物指南</li>
+							<li>
+								<a href="">积分制度</a>
+							</li>
+							<li>
+								<a href="">会员介绍</a>
+							</li>
+							<li>
+								<a href="">购物流程</a>
+							</li>
+							<li>
+								<a href="">常见问题</a>
+							</li>
+						</ul>
+					</div>
+					<div class="right">
+						<div>
+							<p>手机客户端</p>
+							<img src="img/qrcode2.png" />
+						</div>
+						<div>
+							<p>官方微信</p>
+							<img src="img/qrcode2.png" />
+						</div>
+					</div>
+				</div>
+				<div class="bottom">
+					<img src="img/cert.png" />
+					<img src="img/credit.png" />
+					<img src="img/bottom_sm.png" />
+					<div class="siteinfo">
+						<p><span>关于我们</span><span>联系我们</span><span>招聘人才</span><span>友情链接</span>
+							<span>Copyright© 顺丰优选 sfbest.com 版权所有</span>
+						</p>
+						<p><span>京公网安备11010502026831号</span><span>京ICP证150325号</span><span>食品经营许可证JY11113080533669号</span>
+							<span>企业营业执照</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
